@@ -7,7 +7,8 @@ Links identify the evidence used in the earlier research. They are not a promise
 ## MCU
 
 - [Seeed standard XIAO RP2040 product](https://www.seeedstudio.com/XIAO-RP2040-v1-0-p-5026.html): compact controller candidate and historical $3.99 listing.
-- [Seeed XIAO RP2040 documentation](https://wiki.seeedstudio.com/XIAO-RP2040/): pin map, GPIO capability, power and USB/external-power warning.
+- [Seeed XIAO RP2040 documentation](https://wiki.seeedstudio.com/XIAO-RP2040/): pin map, GPIO capability, power and USB/external-power warning. Its "I2C0" label for D4/D5 conflicts with the RP2040 datasheet; see below.
+- [RP2040 datasheet](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf), GPIO function table: GPIO6/GPIO7 are I2C1 SDA/SCL.
 - [Seeed XIAO ESP32C3 documentation](https://wiki.seeedstudio.com/XIAO_ESP32C3_Getting_Started/): alternate same-footprint family, not a requirement.
 - [Seeed pre-soldered XIAO RP2040](https://www.seeedstudio.com/Seeed-Studio-XIAO-RP2040-Pre-Soldered-p-6333.html): header-equipped prototype option, historical $4.99.
 
@@ -20,16 +21,16 @@ Links identify the evidence used in the earlier research. They are not a promise
 
 ## Encoder motors
 
-- [Adafruit motor #4639](https://www.adafruit.com/product/4639): reference motor's wire colors, 100:1 gearbox and supply ranges; historical $12.50.
+- [Adafruit motor #4639](https://www.adafruit.com/product/4639): reference motor's wire colors, 100:1 gearbox and supply ranges; historical $12.50. Rechecked 2026-10-15: about 100 mA running / 200 mA stall listed, and the 1:100 version was shown out of stock.
 - [Amazon uxcell B07N1FT75P](https://www.amazon.com/dp/B07N1FT75P): indexed alternative, direct price/stock/encoder-voltage verification blocked.
 - [DFRobot FIT0484](https://www.dfrobot.com/product-1434.html): 6 V 105 RPM 150:1 candidate, historical $11.90 with conflicting stock metadata.
 - [Pololu #5146 specifications](https://www.pololu.com/product/5146/specs): premium illustrative 6 V 73 RPM 298:1 candidate, historical $29.95, cable separate.
 
 ## Nunchuck
 
-- [Adafruit connector adapter #4836](https://www.adafruit.com/product/4836): optional no-cut adapter, historical $2.95.
+- [Adafruit connector adapter #4836](https://www.adafruit.com/product/4836): owner-selected no-cut adapter, historical $2.95.
 - [Adafruit adapter guide](https://learn.adafruit.com/adafruit-wii-nunchuck-breakout-adapter): host interface and connector approach.
-- [Adapter pinouts](https://learn.adafruit.com/adafruit-wii-nunchuck-breakout-adapter/pinouts): reference wiring.
+- [Adapter pinouts](https://learn.adafruit.com/adafruit-wii-nunchuck-breakout-adapter/pinouts): reference wiring; 10 kΩ SDA/SCL pull-ups, regulator, level-shifted I2C, VIN at host logic level (checked 2026-10-15).
 - [WiiBrew Nunchuck protocol](https://wiibrew.org/wiki/Wiimote/Extension_Controllers/Nunchuck): report structure, axes and active-low buttons.
 - [WiiBrew extension identification](https://wiibrew.org/wiki/Wiimote/Extension_Controllers#Identification): initialization/protocol background.
 - [Arduino WiiChuck](https://github.com/madhephaestus/WiiChuck): candidate library, not tested in this project.

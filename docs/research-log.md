@@ -31,6 +31,13 @@
 - Did not create firmware, CAD, measured sizing data or hardware test results.
 - Verified lockfile-based dependency installation and portable SVG/HTML/PNG regeneration. All eight original artifact hashes matched after regeneration, 35 relative document links resolved, and JSON/SVG/PNG structure checks passed. Scanned the curated text for credentials and private workspace/conversation identifiers. These are handoff/tooling checks, not hardware validation.
 
+## 2026-10-15: wiring cross-check
+
+- Rechecked the unified diagram against the netlist, the prose and the Seeed, Adafruit DRV8833 and Adafruit #4639 pages. All connections, wire colors, SLP pull-down and VM/VMotor polarity notes still agree.
+- Corrected the I2C peripheral label: D4/GP6 and D5/GP7 are RP2040 I2C1, not I2C0 as Seeed's wiki labels them. Wiring is unchanged.
+- Noted that the motor's listed 200 mA stall current is below the stock 1 A limit, so the driver limit does not protect the lens with #4639.
+- Original check notes are left unchanged. The revisions are recorded in [wiring](wiring.md#revisions-after-the-original-check). This was a documentation check, not a bench test.
+
 ## Coverage and evidence limits
 
 This is the relevant project research, not a raw chat dump or private-assistant workspace backup.

@@ -41,8 +41,9 @@ Motor colors apply only to #4639. Signal A/B naming/direction must be checked in
 
 ## I2C and encoder inputs
 
-- D4/GP6 and D5/GP7 are I2C0 SDA/SCL.
+- D4/GP6 and D5/GP7 are SDA/SCL on the RP2040's **I2C1** controller. Seeed's XIAO wiki labels them SDA0/SCL0 ("I2C0"), but the RP2040 GPIO function table assigns GPIO6/GPIO7 to I2C1. Use `I2C(1, ...)` in MicroPython and `i2c1` in the Pico SDK; with an Arduino core, confirm which `Wire` instance the board variant maps to D4/D5. The physical connections are unchanged.
 - Nominal 4.7 kΩ pull-ups from SDA/SCL to 3.3 V are shown. Count any fitted adapter/controller pull-ups; do not blindly parallel multiple strong sets.
+- The owner has chosen Adafruit adapter #4836 instead of cutting the cable. Per Adafruit's pinout page it has 10 kΩ pull-ups on SDA and SCL, an onboard regulator and level-shifted I2C lines, and VIN should be the host's logic level. For the XIAO, feed VIN from 3V3 and wire SDA/SCL/GND to the breakout pins. Start without the external 4.7 kΩ resistors; add them only if the bus is unreliable on the bench. The diagram still shows a generic Nunchuck and has not been redrawn for the adapter.
 - Start the wired Nunchuck at 100 kHz. Clone cable colors, initialization and behavior vary.
 - Configure D2/GP28 and D3/GP29 as digital encoder inputs with pull-ups, matching the referenced vendor example. This does not transfer its gearing constants into this project.
 - Determine positive motor/encoder direction on the detached motor before closing a feedback loop.
@@ -65,8 +66,17 @@ A 1.0 Ω replacement gives nominal 0.2 A as an arithmetic example, not a certifi
 
 Replace the appropriate sense resistor to lower the limit. Adding a resistor in parallel lowers effective resistance and raises the limit. Keep the sense bypass jumper open.
 
+**With motor #4639 the stock limit never acts.** Adafruit lists the motor at about 100 mA running and 200 mA stalled. The stock 1 A limit is five times the stall current, so the driver will not limit current at any load this motor can produce. Even the 1.0 Ω example (nominal 0.2 A) sits at the stall figure and would at most just trip. With this motor, the force on the lens is bounded by motor stall torque multiplied by the pulley ratio, not by the driver. Lens protection therefore depends on firmware stall detection, soft travel limits and mechanical compliance (for example belt slip). A limit below stall would need R_sense above 1 Ω. Whether a limit that close to running current regulates smoothly is untested. These figures are vendor nominal values. The voltage behind the 200 mA figure is not stated, and stall current at the 5 V supply has not been measured.
+
 ## Limits of the check
 
 Documentation review establishes the reference connection intent, not loaded torque suitability, hardware assembly quality, current-limit effectiveness, reliable clone support or successful firmware. An encoder does not detect belt slip or automatically establish absolute lens position after startup. Do not home by blindly pushing into lens end stops.
 
 Primary references are in [sources](sources.md).
+
+## Revisions after the original check
+
+The original [check notes](diagrams/zoom-wiring-checks.txt) are kept unchanged and still match their manifest hash. This page supersedes them on the following points:
+
+- 2026-10-15: the check notes say D4/D5 are "I2C0", following Seeed's labels. The RP2040 controller is I2C1 (see above). Pins and diagram are unaffected.
+- 2026-10-15: the check notes call the stock 1 A limit inappropriate and give 1.0 Ω / 0.2 A as an example. Against the motor's listed 200 mA stall current, neither setting limits #4639 in practice (see Current limiting).

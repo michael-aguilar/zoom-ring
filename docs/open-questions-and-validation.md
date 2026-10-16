@@ -12,8 +12,9 @@ No boxes below represent completed hardware tests. This checklist consolidates t
 - [ ] Pulley tooth counts, belt specification and tensioning plan.
 - [ ] Final encoder-equipped motor, shaft dimensions, voltage limits, stall current and encoder resolution.
 - [ ] Exact third-party Nunchuck and working initialization/library combination.
-- [ ] Firmware stack and pin-number convention: board D labels versus raw GP numbers.
-- [ ] Current-sense resistor selection, power rating and actual current-limit behavior.
+- [ ] Firmware stack and pin-number convention: board D labels versus raw GP numbers. D4/D5 sit on I2C1, so check the I2C instance the chosen stack uses.
+- [ ] Current-sense resistor selection, power rating and actual current-limit behavior. With #4639 (listed 200 mA stall), the stock 1 A limit never acts; decide whether a sub-stall limit is useful or whether protection relies on firmware stall detection and pulley ratio.
+- [ ] Actual running and stall current of the chosen motor at the 5 V supply.
 - [ ] USB supply idle behavior/current capacity; shared camera battery only if independently verified.
 
 ## Suggested bring-up sequence

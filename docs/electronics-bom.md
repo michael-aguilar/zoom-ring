@@ -17,7 +17,7 @@ All prices below were observed or estimated during 2026-10-15 research, before s
 | Up to 2 | I2C pull-up resistors | Nominal 4.7 kΩ | Only if needed; account for existing pull-ups |
 | 1 | A-channel current-sense resistor replacement | Value to be selected | Stock nominal 1 A limit is not established lens protection |
 | As needed | Wiring, connectors, strain relief, USB power breakout/cable | Earlier allowance about $5–10 for assembly bits | Actual adapter/cable choices not finalized |
-| Optional | [Nunchuck adapter #4836](https://www.adafruit.com/product/4836) | $2.95 | Avoids cutting the controller connector |
+| 1 | [Nunchuck adapter #4836](https://www.adafruit.com/product/4836) | $2.95 | Owner-selected 2026-10-15 instead of cutting the cable. Has 10 kΩ I2C pull-ups, so the separate pull-ups are likely unnecessary |
 | Prototype alternative | [XIAO RP2040 with pre-soldered headers](https://www.seeedstudio.com/Seeed-Studio-XIAO-RP2040-Pre-Soldered-p-6333.html) | $4.99 | Same basic controller with easier removable test connections |
 
 The electronics-only total has not been finalized. Earlier $80–120 and later $70–130 whole-prototype estimates included mechanical items and broad allowances; do not treat either as a current electronics quote.

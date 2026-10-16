@@ -9,6 +9,7 @@ Updated 2026-10-15. "Confirmed" means explicitly requested, not physically valid
 | Scope | Motorized zoom ring only, on the existing monopod | October 15 scope reduction |
 | Feedback | Encoder required for closed-loop control | Explicit follow-up |
 | Input | Wired Wii Nunchuck, third-party acceptable | October 15 request |
+| Nunchuck connection | Adafruit adapter #4836; do not cut the controller cable | Owner decision, 2026-10-15 |
 | MCU priority | Small physical board size; processor family flexible | Clarification after smaller-Pico question |
 | Mechanics | Custom mounts and printed pulleys with purchased timing belt | Owner's stated plan, not finished CAD |
 | Parts research | Electronics only; prefer Amazon but accept inexpensive alternatives | Follow-up clarification |
