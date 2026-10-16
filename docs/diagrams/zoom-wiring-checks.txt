@@ -1,0 +1,45 @@
+ZOOM CONTROLLER WIRING V1 - CHECKED 2026-10-15
+
+Scope: standard Seeed XIAO RP2040, Adafruit DRV8833 #3297 and Adafruit encoder motor #4639. Electrical documentation review, not a bench test or guarantee of lens torque suitability. Diagram pin names are functional connections, not a physical board footprint.
+
+Checked:
+- XIAO D4=GPIO6 and D5=GPIO7 are I2C0 SDA/SCL.
+- D6=GPIO0 and D7=GPIO1 are PWM-capable; use as GPIO, not UART.
+- D0=GPIO26 drives SLP. Initialize AIN1/AIN2 and SLP low. Enable SLP only with valid control input. Driver internally pulls SLP down.
+- D2=GPIO28 and D3=GPIO29 are available digital inputs. Enable INPUT_PULLUP on both for encoder signals, consistent with vendor example. Set direction sign in firmware during unloaded test.
+- XIAO GPIO is 3.3V only. Driver accepts 3.3V inputs at 5V motor supply. No level shifter needed for this exact motor powered as drawn.
+- XIAO 5V pad and DRV8833 VM receive parallel branches from switched USB 5V; motor current does not pass through the XIAO. All grounds common.
+- #4639 motor permits 4.5-6V motor supply and 3-5V encoder supply. Motor red/white go only to the two motor A bridge outputs. Encoder black=3.3V; blue=GND; yellow/green=signal. THESE ARE NOT GENERIC WIRE COLORS.
+- C1 470uF >=10V electrolytic: positive to VM, negative to GND, near driver. C2 100nF ceramic across motor terminals, near motor. Board already has local bypass components.
+- Two nominal 4.7k I2C pull-ups to 3.3V shown. Account for any built-in pull-ups; do not blindly duplicate a strong pull-up set. Start at 100kHz on the Nunchuck cable. Verify clone pinout and communication; color and initialization behavior can vary.
+- External 5V and computer USB must not be connected simultaneously to the standard XIAO. Unplug the external supply before programming; do not run the motor from the PC USB port during this process.
+- VM solder pad is not reverse-polarity protected. The board's separate VMotor/terminal input is protected. Diagram intentionally names VM, not a generic VCC input.
+- Unused B motor outputs, BIN1/BIN2 and FLT may remain unconnected for this setup; B inputs have internal pull-downs. Existing sense resistors stay installed unless deliberately changed.
+
+Still requires build testing:
+- Motor torque, pulley ratio, minimum smooth speed, gear noise, mechanical end stops, and belt tension.
+- Current limit: stock A-channel Rsense=0.2 ohm gives nominal 1A. This is not an appropriate lens torque limit. Choose a lower limit by replacing the A sense resistor; I_limit=0.2/Rsense. 1.0 ohm yields nominal 0.2A as a calculation example, not a certified lens-safe value. Adding a resistor in parallel increases the limit. Keep the bypass jumper open.
+- Firmware needs input timeout, enable/dead-man behavior, acceleration/deceleration, encoder stall detection, and travel limits initialized from a known position. Motor encoder does not measure belt slip or absolute lens position after power cycling. Do not automatically home by driving into the lens stop.
+- A USB pack must stay on at idle load; verify it does not automatically shut off. Actual supply/noise and clone behavior have not been bench tested.
+
+PRIMARY SOURCES
+Seeed pin map and power warning:
+https://wiki.seeedstudio.com/XIAO-RP2040/
+Adafruit driver pinouts, current limit and sleep behavior:
+https://learn.adafruit.com/adafruit-drv8833-dc-stepper-motor-driver-breakout-board/pinouts
+Motor wire colors and supply ranges:
+https://www.adafruit.com/product/4639
+Encoder input pull-up example (use pin configuration, not its unrelated gearing constants):
+https://github.com/adafruit/Adafruit_Motor_Shield_V2_Library/blob/master/examples/encoderMotorRPM/encoderMotorRPM.ino
+Nunchuck I2C interface / optional adapter:
+https://learn.adafruit.com/adafruit-wii-nunchuck-breakout-adapter/pinouts
+
+OTHER MOTORS
+Amazon uxcell encoder 6V 100RPM (indexed listing; live price/stock blocked):
+https://www.amazon.com/dp/B07N1FT75P
+DFRobot FIT0484 6V 105RPM, 150:1 encoder motor: listed USD 11.90. Page metadata conflicts on stock; availability unconfirmed. Verify its own encoder voltage/pinout before substitution:
+https://www.dfrobot.com/product-1434.html
+Original premium example: Pololu 5146, 6V 73RPM, USD29.95, cable sold separately:
+https://www.pololu.com/product/5146/specs
+
+Prices exclude shipping/tax. Diagram is only pin/color-checked for Adafruit #4639, not a universal clone-motor wiring guide.

@@ -1,0 +1,46 @@
+{
+  "captured_on": "2026-10-15",
+  "scope": "Original exported diagrams, wiring notes and netlist. Hashes are integrity checks, not electrical validation.",
+  "artifacts": [
+    {
+      "file": "docs/diagrams/zoom-wiring-unified.png",
+      "sha256": "e0f69052b1cbc78a99105a4011ac8f223bd3a5202d56992feee50bc8bafbddd9",
+      "provenance": "Original project artifact from the 2026-10-15 research session, copied unchanged."
+    },
+    {
+      "file": "docs/diagrams/zoom-wiring-unified.svg",
+      "sha256": "e095ad1419fb1016ea0d873c32b3e8a2919a36f81c5656bae9144245dfec728b",
+      "provenance": "Original project artifact from the 2026-10-15 research session, copied unchanged."
+    },
+    {
+      "file": "docs/diagrams/zoom-wiring-unified.html",
+      "sha256": "56a028d5f78a8da4f05b843a8989208dae46829e153670b1ed0f3bc242ae6225",
+      "provenance": "Original project artifact from the 2026-10-15 research session, copied unchanged."
+    },
+    {
+      "file": "docs/diagrams/zoom-wiring-v1.png",
+      "sha256": "726195e5760d0aa0de940505cea3351a29cc742b19325f0a2659739e18837f37",
+      "provenance": "Original project artifact from the 2026-10-15 research session, copied unchanged."
+    },
+    {
+      "file": "docs/diagrams/zoom-wiring-v1.svg",
+      "sha256": "8febb9cb98958fa67cad2724c303c4a3f6d2c4fdfccdce7099f229f38c58325e",
+      "provenance": "Original project artifact from the 2026-10-15 research session, copied unchanged."
+    },
+    {
+      "file": "docs/diagrams/zoom-wiring-v1.html",
+      "sha256": "276a12972aca5d70a68fcd6b80f08633ecc485d47a5eedc96e5b7c4f3bfd41fb",
+      "provenance": "Original project artifact from the 2026-10-15 research session, copied unchanged."
+    },
+    {
+      "file": "docs/diagrams/zoom-wiring-netlist.json",
+      "sha256": "ce8b964c7628545eb72efd5ba52e6e6bc9857fafb4a76630b3339eec449f9dca",
+      "provenance": "Original project artifact from the 2026-10-15 research session, copied unchanged."
+    },
+    {
+      "file": "docs/diagrams/zoom-wiring-checks.txt",
+      "sha256": "0666bd5f3601271418349fde4f60c2fa8fae90f882de66d9fde128fae7e2dede",
+      "provenance": "Original project artifact from the 2026-10-15 research session, copied unchanged."
+    }
+  ]
+}

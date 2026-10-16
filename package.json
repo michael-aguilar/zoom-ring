@@ -1,0 +1,12 @@
+{
+  "name": "zoom-ring-research",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Portable research handoff and wiring diagram tooling for zoom-ring",
+  "scripts": {
+    "diagrams": "python3 scripts/make_diagram.py && python3 scripts/make_unified.py && node scripts/render-diagrams.cjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-wasm": "2.6.2"
+  }
+}

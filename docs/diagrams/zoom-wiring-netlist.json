@@ -1,0 +1,63 @@
+{
+  "5V": [
+    "USB5V.switched",
+    "XIAO.5V",
+    "DRV8833.VM",
+    "C1.+"
+  ],
+  "GND": [
+    "USB.GND",
+    "XIAO.GND",
+    "DRV8833.GND",
+    "Nunchuck.GND",
+    "Encoder.blue",
+    "C1.-"
+  ],
+  "3V3": [
+    "XIAO.3V3",
+    "Nunchuck.VCC",
+    "Encoder.black",
+    "R1.1",
+    "R2.1"
+  ],
+  "SDA": [
+    "XIAO.D4/GP6",
+    "Nunchuck.SDA",
+    "R1.2"
+  ],
+  "SCL": [
+    "XIAO.D5/GP7",
+    "Nunchuck.SCL",
+    "R2.2"
+  ],
+  "AIN1": [
+    "XIAO.D6/GP0",
+    "DRV8833.AIN1"
+  ],
+  "AIN2": [
+    "XIAO.D7/GP1",
+    "DRV8833.AIN2"
+  ],
+  "SLP": [
+    "XIAO.D0/GP26",
+    "DRV8833.SLP"
+  ],
+  "ENC_YELLOW": [
+    "XIAO.D2/GP28",
+    "Encoder.yellow"
+  ],
+  "ENC_GREEN": [
+    "XIAO.D3/GP29",
+    "Encoder.green"
+  ],
+  "M1": [
+    "DRV8833.AOUT1",
+    "Motor.red",
+    "C2.1"
+  ],
+  "M2": [
+    "DRV8833.AOUT2",
+    "Motor.white",
+    "C2.2"
+  ]
+}
