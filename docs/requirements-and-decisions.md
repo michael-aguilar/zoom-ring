@@ -31,7 +31,7 @@ Updated 2026-10-15. "Confirmed" means explicitly requested, not physically valid
 | --- | --- | --- |
 | Standard XIAO RP2040 | Small, 3.3 V logic, I2C/PWM and sufficient GPIO | Final packaging and software stack |
 | Adafruit DRV8833 #3297 | Documented reversible drive, sleep and adjustable current limit | Proper current limit for mechanism |
-| Adafruit motor #4639 | Documented 5 V motor and 3.3 V encoder compatibility | Torque, speed, noise, backlash |
+| Adafruit motor #4639 | Documented 5 V motor and 3.3 V encoder compatibility | Sized 2026-10-19 against the measured ~2.1 kg·cm: marginal at 1:100. Pololu #5146 or an N20 1:298 fits better (see mechanics-and-power.md). Noise and backlash untested |
 | Small USB 5 V pack | Simple independent prototype supply | Idle auto-shutdown, transients and runtime |
 | Stick = speed/direction; Z = hold-to-enable; C = slow mode | Simple one-handed control | Actual user feel and final mapping |
 | Pre-soldered XIAO headers for breadboarding | Reliable removable prototype connections | Breadboard layout and other boards' connections |
@@ -47,3 +47,4 @@ Updated 2026-10-15. "Confirmed" means explicitly requested, not physically valid
 - The earlier multi-panel diagram is retained, but the unified diagram is the main visual.
 - Encoder-equipped motors are required. An encoderless cheap motor is not an equivalent substitute.
 - Camera-supplied motor power remains an unanswered feasibility question, not a proven v1 feature.
+- 2026-10-19: the first zoom-ring load measurement (about 2.1 kg·cm peak) made #4639 at 1:100 look marginal. It stays the wiring reference, but a higher-ratio motor is now the sizing recommendation. No motor has been selected.

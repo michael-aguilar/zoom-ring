@@ -38,6 +38,13 @@
 - Noted that the motor's listed 200 mA stall current is below the stock 1 A limit, so the driver limit does not protect the lens with #4639.
 - Original check notes are left unchanged. The revisions are recorded in [wiring](wiring.md#revisions-after-the-original-check). This was a documentation check, not a bench test.
 
+## 2026-10-19: first zoom-ring measurement and motor sizing
+
+- Owner measured zoom-ring pull force: three 55 → 250 pulls with a hanging scale and string on the 69.6 mm grip. Peak about 600 g, about 2.1 kg·cm at the ring.
+- Collected stall/rated torque and speed for the four motor candidates from vendor pages (Adafruit's comes from its ratio table image).
+- Sized each against the measurement. #4639 at 1:100 is marginal; Pololu #5146 or an N20 1:298 fits with margin. These are recommendations; no motor was selected or bought.
+- Found the uxcell listing's encoder wire colors are reversed relative to #4639.
+
 ## Coverage and evidence limits
 
 This is the relevant project research, not a raw chat dump or private-assistant workspace backup.

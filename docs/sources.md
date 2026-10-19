@@ -21,10 +21,10 @@ Links identify the evidence used in the earlier research. They are not a promise
 
 ## Encoder motors
 
-- [Adafruit motor #4639](https://www.adafruit.com/product/4639): reference motor's wire colors, 100:1 gearbox and supply ranges; historical $12.50. Rechecked 2026-10-15: about 100 mA running / 200 mA stall listed, and the 1:100 version was shown out of stock.
-- [Amazon uxcell B07N1FT75P](https://www.amazon.com/dp/B07N1FT75P): indexed alternative, direct price/stock/encoder-voltage verification blocked.
-- [DFRobot FIT0484](https://www.dfrobot.com/product-1434.html): 6 V 105 RPM 150:1 candidate, historical $11.90 with conflicting stock metadata.
-- [Pololu #5146 specifications](https://www.pololu.com/product/5146/specs): premium illustrative 6 V 73 RPM 298:1 candidate, historical $29.95, cable separate.
+- [Adafruit motor #4639](https://www.adafruit.com/product/4639): reference motor's wire colors, 100:1 gearbox and supply ranges; historical $12.50. Rechecked 2026-10-15: about 100 mA running / 200 mA stall listed, and the 1:100 version was shown out of stock. Torque and speed per ratio come from the page's [ratio table image](https://cdn-shop.adafruit.com/product-files/4640/n20_6V_200mW_table.png) (read 2026-10-19; 1:100 = 0.40 kg·cm rated, 0.7 kg·cm stall). [Datasheet](https://cdn-shop.adafruit.com/product-files/4639/n20+motors_C15011+6V.pdf).
+- [Amazon uxcell B07N1FT75P](https://www.amazon.com/dp/B07N1FT75P): indexed alternative. Read 2026-10-19: $18.49, 5 in stock, 6 V 100 rpm, 3 mm D-shaft, no torque listed; black = encoder negative, blue = encoder positive.
+- [DFRobot FIT0484](https://www.dfrobot.com/product-1434.html): 6 V 105 RPM 150:1 candidate, historical $11.90. Read 2026-10-19: out of stock; 1.0 kg·cm rated at 60 rpm, 2.2 kg·cm instant torque; encoder voltage not listed.
+- [Pololu #5146 specifications](https://www.pololu.com/product/5146/specs): premium 6 V 73 RPM 298:1 candidate, historical $29.95, cable separate. Read 2026-10-19: 2.4 kg·cm theoretical stall, 0.67 A stall, 12 CPR encoder; Pololu warns stalls can damage the gearbox.
 
 ## Nunchuck
 

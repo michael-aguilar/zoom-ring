@@ -7,7 +7,7 @@ No boxes below represent completed hardware tests. This checklist consolidates t
 - [ ] Exact Canon EF-S lens model/version, adapter and stationary mounting geometry.
 - [ ] Actual components already owned or ordered, if any.
 - [ ] Zoom angular travel and ring/pulley mounting dimensions.
-- [ ] Breakaway/running torque across the range, in both directions.
+- [ ] Breakaway/running torque across the range, in both directions. 55 → 250 measured 2026-10-19 (about 2.1 kg·cm peak); 250 → 55 not yet measured.
 - [ ] Desired full sweep time, minimum speed and acceptable motor noise.
 - [ ] Pulley tooth counts, belt specification and tensioning plan.
 - [ ] Final encoder-equipped motor, shaft dimensions, voltage limits, stall current and encoder resolution.
@@ -35,6 +35,12 @@ No boxes below represent completed hardware tests. This checklist consolidates t
 For each actual test, record date, component part numbers, firmware revision, supply voltage, pulley ratio, load/position, current-limit setting, measurement method and outcome. Document failures as well as success.
 
 Important acceptance targets remain to be defined with the owner: useful minimum zoom speed, maximum sweep speed, acceptable shake/noise, runtime and fault behavior. Do not invent numeric pass thresholds or label the mechanism safe based only on a reference diagram.
+
+## Recorded measurements
+
+| Date | What | Parts and conditions | Result |
+| --- | --- | --- | --- |
+| 2026-10-19 | Zoom-ring pull force, 3 runs, 55 → 250 | Hand-held digital hanging scale; string on the 69.6 mm rubber grip; lens model unconfirmed; running value eyeballed | Breakaway 420–480 g, running average 550–580 g, rising to about 600 g near 250. Peak about 2.1 kg·cm at the ring. Details in [mechanics and power](mechanics-and-power.md#measured-zoom-load-2026-10-19) |
 
 ## Known limitations
 

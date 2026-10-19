@@ -33,6 +33,8 @@ The electronics-only total has not been finalized. Earlier $80–120 and later $
 
 100:1 is a gearbox reduction ratio, not 100 RPM. No-load speed at 6 V is not loaded speed at the proposed 5 V supply.
 
+Sizing against the 2026-10-19 zoom-ring measurement (about 2.1 kg·cm peak) is in [mechanics and power](mechanics-and-power.md#motor-sizing-against-the-measurement). In short: #4639 at 1:100 is marginal; Pololu #5146 at about 4:1 or an N20 1:298 at about 6:1 fits with margin. On 2026-10-19 the uxcell listing showed $18.49 with 5 in stock, listed no torque, and gave black = encoder negative, blue = encoder positive (the reverse of #4639). DFRobot FIT0484 showed out of stock.
+
 Do not reuse the Adafruit motor's wire colors, pull-up assumptions or voltage compatibility for another motor without checking that specific product.
 
 ## MCU comparison

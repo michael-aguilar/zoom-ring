@@ -40,12 +40,12 @@ Read [wiring](wiring.md) before using the diagram. The stock driver's nominal 1 
 - Portable diagram generators, renderer dependency lockfile, and the fonts/license used by the diagrams.
 - Curated component comparisons, source links, decisions, firmware design notes and unanswered questions.
 
-There is no implemented motor firmware, CAD, purchased-parts inventory, measured zoom torque, finalized pulley ratio or recorded hardware test result.
+There is no implemented motor firmware, CAD, purchased-parts inventory, finalized pulley ratio or recorded hardware test result. A first hand-held zoom-ring pull measurement (2026-10-19, about 2.1 kg·cm peak, one direction) and a motor sizing pass are in [mechanics and power](mechanics-and-power.md#measured-zoom-load-2026-10-19).
 
 ## Next useful work
 
 1. Confirm exact lens/adapter and actual hardware already on hand.
-2. Measure zoom travel, ring/pulley dimensions, breakaway/running resistance and desired full-sweep time.
+2. Measure zoom travel, ring/pulley dimensions, breakaway/running resistance and desired full-sweep time. Ring diameter and 55 → 250 pull force are done; travel angle, sweep time and the reverse pull remain.
 3. Use those measurements to select motor and pulley ratio. Confirm candidate performance at 5 V, not just its 6 V no-load rating.
 4. Verify the exact Nunchuck and motor electrical interfaces and choose the current-limit resistor conservatively.
 5. Implement and test input, encoder and fail-stop behavior with the motor detached before any lens-coupled run.
